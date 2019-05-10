@@ -3,6 +3,16 @@
 Lightweight HTML5 video and audio player component for vuetify.
 
 
+## Screenshots
+
+### Video Player
+
+![video player](stuff/video-player-screenshot.png?raw=true)
+
+### Audio Player
+
+![audio player](stuff/audio-player-screenshot.png?raw=true)
+
 ## Install
 
 ```
