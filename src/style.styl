@@ -1,0 +1,35 @@
+.player-container
+  display: block
+  cursor: pointer
+  width: 100%
+  position: relative
+  transform: translateZ(0px)
+  overflow: hidden
+
+  .player
+    height: 100%
+    width: 100%
+
+  .control-bar
+    bottom: 0px
+    cursor: auto
+    height: 88px
+    padding-bottom: 5px
+    position: absolute
+    width: 100%
+    opacity 0
+    transition all 0.3s
+
+    &.visible
+      opacity 1
+
+  .scrubber
+    margin: 0px 21px -4px
+
+  .times
+    font-size: 13px
+    font-weight: 400
+    font-family: "helvetica neue", arial
+    user-select: none
+    flex-shrink: 0
+    margin-right: 15px

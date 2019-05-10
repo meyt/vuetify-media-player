@@ -1,0 +1,26 @@
+{
+  "name": "vuetify-media-player",
+  "version": "0.1.0",
+  "description": "Lightweight HTML5 video and audio player component for vuetify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:meyt/vuetify-media-player.git"
+  },
+  "keywords": [
+    "video-player",
+    "audio-player",
+    "html5",
+    "vuetify",
+    "vue"
+  ],
+  "author": "Mahdi Ghanea.g",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meyt/vuetify-media-player/issues"
+  },
+  "homepage": "https://github.com/meyt/vuetify-media-player#readme"
+}
