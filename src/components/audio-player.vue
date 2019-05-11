@@ -14,6 +14,7 @@
         :max="duration"
         light
         @input="seek(current)"
+        :loading="isInProgress"
       )
       v-layout(align-center)
         v-btn(
