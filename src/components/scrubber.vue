@@ -49,23 +49,28 @@ export default {
     drag (e) {
       if (!this.dragging) return
       e.preventDefault()
-      const x = e.type === 'touchmove'
-        ? e.touches[0].clientX
-        : e.clientX
-      const el = this.$refs.scrubber
-      const barWidth = el.clientWidth
-      let progressWidth = x - el.getBoundingClientRect().left
-      if (progressWidth >= barWidth) progressWidth = barWidth
-      if (progressWidth < 0) progressWidth = 0
-      this.percent = progressWidth * 100 / barWidth
-      this.$emit('input', this.min + ((this.max - this.min) * this.percent / 100))
-      this.$emit('change')
+      this.updateProgress(e)
     },
     dragEnd (e) {
       // To just prevent close parent dialog
       // capturing must enabled on click event
       if (this.dragging) e.stopPropagation()
       this.dragging = false
+      this.updateProgress(e)
+    },
+    updateProgress (e) {
+      if (!this.isScrubber(e.target)) return
+      const posX = e.type === 'touchmove'
+        ? e.touches[0].clientX
+        : e.clientX
+      const el = this.$refs.scrubber
+      const barWidth = el.clientWidth
+      let progressWidth = posX - el.getBoundingClientRect().left
+      if (progressWidth >= barWidth) progressWidth = barWidth
+      if (progressWidth < 0) progressWidth = 0
+      this.percent = progressWidth * 100 / barWidth
+      this.$emit('input', this.min + ((this.max - this.min) * this.percent / 100))
+      this.$emit('change')
     }
   },
   mounted () {
