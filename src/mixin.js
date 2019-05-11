@@ -19,6 +19,11 @@ export default {
       current: 0
     }
   },
+  computed: {
+    isInProgress () {
+      return this.loading || this.seeking
+    }
+  },
   watch: {
     loading (newVal) {
       this.$emit('loading', newVal)

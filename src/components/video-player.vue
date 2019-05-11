@@ -12,7 +12,7 @@
     // Pre-loader
     v-progress-circular.preloader(
       @click="unmuteAndTogglePlay()"
-      v-if="loading || seeking"
+      v-if="isInProgress"
       indeterminate
       size="64"
     )
@@ -24,6 +24,7 @@
         :min="0"
         :max="duration"
         @input="seek(current)"
+        :loading="isInProgress"
       )
       v-layout(align-center)
         v-btn(
