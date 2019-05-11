@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(ref="scrubber" :class="{scrubber: true, light: light}")
+  div(ref="scrubber" :class="{scrubber: true, light: light, loading: loading}")
     div.bar
     div.progress(:style="{width: percent + '%'}")
     div.handler(:style="{left: percent + '%'}")
@@ -21,6 +21,10 @@ export default {
       default: 100
     },
     light: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
       type: Boolean,
       default: false
     }
@@ -112,6 +116,7 @@ export default {
     top: 16px
     background-color: rgba(255, 255, 255, 0.3)
     border-radius: 5px
+    transition: height 0.2s
 
   .progress
     height: 3px
@@ -120,6 +125,7 @@ export default {
     top: 16px
     background-color: #fff
     border-radius: 5px
+    transition: height 0.2s
 
   .handler
     background-color: #fff
@@ -137,6 +143,24 @@ export default {
   &:hover .handler
     transform: scale(1)
 
+  &.loading
+    .bar, .progress
+      height: 5px
+    .handler
+      top: 10px
+    .bar
+      background-color: initial
+      background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 11px,
+        rgba(255, 255, 255, 0.2) 10px,
+        rgba(255, 255, 255, 0.2) 20px
+      )
+      background-size: 28px 28px
+      background-repeat: repeat-x
+      animation: scrubberProgressMove .5s linear infinite
+
   &.light
     .bar
       background-color: rgba(0, 0, 0, 0.3)
@@ -147,4 +171,9 @@ export default {
     .handler
       background-color: #000
 
+@keyframes scrubberProgressMove
+  0%
+    background-position: 0 0
+  100%
+    background-position: 28px 0
 </style>
