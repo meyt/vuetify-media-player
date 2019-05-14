@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.player-container.audio
+  div.player-container.audio.mt-4
 
     // Player
     div.player
