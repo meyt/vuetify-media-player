@@ -17,12 +17,6 @@
         :loading="isInProgress"
       )
       v-layout(align-center)
-        v-btn(
-          icon
-          large
-          @click="toggleMute()"
-        )
-          v-icon(large) {{ muted ? 'volume_off' : 'volume_up' }}
         v-flex.times
           span {{ durationTime }}
           span &nbsp;/&nbsp;
@@ -81,4 +75,6 @@ export default {
 .player-container.audio
   background-color: #fff
   min-height: 80px
+  .times
+    margin-right: 21px
 </style>
