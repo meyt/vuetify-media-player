@@ -241,6 +241,7 @@ export default {
     },
     load () {
       this.$refs.media.load()
+      this.firstPlay = false
     },
     unmuteAndTogglePlay () {
       if (!this.firstPlay) {
