@@ -1,6 +1,6 @@
 {
   "name": "vuetify-media-player",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Lightweight HTML5 video and audio player component for vuetify",
   "main": "index.js",
   "scripts": {
