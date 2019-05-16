@@ -1,8 +1,9 @@
 <template lang="pug">
-  div.player-container.video(
+  div(
     ref="mediaPlayer"
     @mouseover="onMouseHover"
     @dblclick.prevent="() => doubleClickFullscreen ? toggleFullScreen() : null"
+    :class="classes"
   )
     // Player
     div.player(@click.prevent="unmuteOrTogglePlay")
@@ -100,6 +101,12 @@ export default {
     }
   },
   computed: {
+    classes () {
+      return {
+        'player-container video': true,
+        'fullscreen': this.fullscreen
+      }
+    },
     durationTime () {
       return secondsToTime(this.duration).join(':')
     },
