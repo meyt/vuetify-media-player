@@ -64,6 +64,7 @@ export default {
     },
     updateProgress (e) {
       if (!this.isScrubber(e.target)) return
+      if (e.type === 'touchend') return
       const posX = e.type === 'touchmove'
         ? e.touches[0].clientX
         : e.clientX
