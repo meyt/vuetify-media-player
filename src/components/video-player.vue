@@ -5,13 +5,13 @@
     @dblclick.prevent="() => doubleClickFullscreen ? toggleFullScreen() : null"
   )
     // Player
-    div.player(@click.prevent="unmuteAndTogglePlay")
+    div.player(@click.prevent="unmuteOrTogglePlay")
       video(ref="media")
         slot(v-if="canLoad")
 
     // Pre-loader
     v-progress-circular.preloader(
-      @click="unmuteAndTogglePlay()"
+      @click="unmuteOrTogglePlay()"
       v-if="isInProgress"
       indeterminate
       size="64"

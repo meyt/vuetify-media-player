@@ -250,6 +250,14 @@ export default {
       }
       this.togglePlay()
     },
+    unmuteOrTogglePlay () {
+      if (!this.firstPlay) {
+        this.unmute()
+        this.firstPlay = true
+        if (this.playing) return
+      }
+      this.togglePlay()
+    },
     resetFirstPlay () {
       this.firstPlay = false
     }
