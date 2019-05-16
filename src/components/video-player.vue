@@ -6,7 +6,7 @@
   )
     // Player
     div.player(@click.prevent="unmuteOrTogglePlay")
-      video(ref="media")
+      video(ref="media" :width="width" :height="height")
         slot(v-if="canLoad")
 
     // Pre-loader
