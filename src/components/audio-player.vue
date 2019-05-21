@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.player-container.audio.mt-4
+  div.player-container.audio
 
     // Player
     div.player
@@ -75,6 +75,13 @@ export default {
 .player-container.audio
   background-color: #fff
   min-height: 80px
+
+  .control-bar
+    height: 75px
+
+  .player
+    margin-top: 24px
+
   .times
     margin-right: 21px
 </style>
