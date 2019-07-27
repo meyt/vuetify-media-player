@@ -1,3 +1,5 @@
+> Project moved https://github.com/meyt/vue-md-player
+
 # vuetify-media-player
 
 Lightweight HTML5 video and audio player component for vuetify.
